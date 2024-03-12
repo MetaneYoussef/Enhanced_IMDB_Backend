@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const utilisateursRoutes = require('./routes/utilisateurs')
 const filmsRoutes = require('./routes/films')
+const acteursRoutes = require('./routes/acteurs')
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 
 app.use('/api/utilisateurs', utilisateursRoutes);
 app.use('/api/films', filmsRoutes);
+app.use('/api/acteurs', acteursRoutes);
 
 mongoose.connect(process.env.DBURI)
     .then((result) => {
