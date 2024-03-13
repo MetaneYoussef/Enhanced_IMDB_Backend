@@ -12,17 +12,26 @@ const filmsSchema = new Schema({
         required: true
     },
     date_sortie: {
-        type: String,
+        type: Date,
         required: true
     },
-    Longuer: {
-        type: String,
+    Longueur: {
+        type: Number,
+        min: 1,
         required: true
     },
     genre: {
         type: [String],
         required: true
+    },
+    acteurs: {
+        type: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Acteurs'
+        }]
     }
+
+
 }, { timestamps: true })
 
 module.exports = mongoose.model('Films', filmsSchema)

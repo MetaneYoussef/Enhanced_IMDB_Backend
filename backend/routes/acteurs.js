@@ -5,7 +5,7 @@ const {
     obtenirActeur,
     supprimerActeur,
     majActeur
-} = require('../controllers/acteurs')
+} = require('../controllers/acteursController')
 const router = express.Router()
 
 router.post('/', creerActeur)
