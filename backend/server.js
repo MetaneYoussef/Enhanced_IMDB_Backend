@@ -16,11 +16,7 @@ app.use((req, res, next) => {
     next()
 })
 
-mongoose.connect(process.env.DBURI)
-    .then((result) => {
-        app.listen(process.env.PORT);
-    })
-    .catch((err) => console.log(err));
+
 
 app.use('/api/utilisateurs', utilisateursRoutes);
 app.use('/api/films', filmsRoutes);
@@ -28,3 +24,8 @@ app.use('/api/acteurs', acteursRoutes);
 app.use('/api/series', seriesRoutes);
 
 
+mongoose.connect(process.env.DBURI)
+    .then((result) => {
+        app.listen(process.env.PORT);
+    })
+    .catch((err) => console.log(err));
